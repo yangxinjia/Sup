@@ -23,13 +23,14 @@ logger.setLevel(logging.INFO)
 app = Flask(__name__)
 @app.route('/ctl/new_project', methods = ['POST'])
 def new_project():
-    logger.info('new_project request')
+    logger.info('<<=============== new_project request')
     request_body = request.json
     try:
 	logger.info('get id and name')
         id = request_body["id"]
+	logger.info('get id ok')
         project = request_body["project"]
-	logger.info('success')
+	logger.info('get name ok')
     except:
 	logger.warn('failed')
         resp_dict = {'status': '400', 'message': 'I think you should tell me your project\'s id and name,shouldn\'t you? '}
@@ -38,19 +39,20 @@ def new_project():
     logger.info('check id')
     (c_status, c_result) = commands.getstatusoutput('./shell/check_id.sh %s'%id)    
     logger.info('check_id.sh done')
-    if c_result != "": ## if id  exist
+    if c_result != "1": ## if id  exist
 	logger.warn('id already exsit')
-	logger.error('new_project failed')
+	logger.warn('new_project failed')
         status = "400"
         message = "id(%s) alreay exist"%id
     else: ##
 	logger.info('id not exsit')
         status = "200"
         message ="ok"
-    	logger.warn('new_project ok')
+    	logger.info('new_project ok')
+	(c_status, c_result) = commands.getstatusoutput('./shell/new_project.sh %s %s'%(id,project))
     resp_dict = {'status': status,'id': id, 'message': message, 'project': project}
     return jsonify(resp_dict)
-    logger.info('return ok')
+    logger.info('=================>> return ok')
 @app.route('/function/view_project', methods = ['POST','GET'])
 def view_project():
     try:

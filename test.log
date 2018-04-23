@@ -3633,3 +3633,198 @@ TypeError: __init__() got an unexpected keyword argument 'mimetype'
 2018-04-10 11:32:40,838 INFO    : 211.103.220.74 - - [10/Apr/2018 11:32:40] "GET /function/view_project HTTP/1.1" 200 -
 2018-04-10 11:32:40,866 INFO    : 211.103.220.74 - - [10/Apr/2018 11:32:40] "GET /function/view_project HTTP/1.1" 200 -
 2018-04-20 11:55:03,116 INFO    :  * Running on http://0.0.0.0:6000/ (Press CTRL+C to quit)
+2018-04-20 12:13:31,916 INFO    :  * Running on http://0.0.0.0:6000/ (Press CTRL+C to quit)
+2018-04-20 12:15:12,658 INFO    :  * Running on http://0.0.0.0:6000/ (Press CTRL+C to quit)
+2018-04-20 12:15:15,436 INFO    :  * Running on http://0.0.0.0:6000/ (Press CTRL+C to quit)
+2018-04-20 12:15:33,523 INFO    : 211.103.220.74 - - [20/Apr/2018 12:15:33] "GET /function/view_project HTTP/1.1" 200 -
+2018-04-20 12:15:49,887 ERROR   : Exception on /function/test [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "main.py", line 115, in test
+    return json.dumps(resp_dict,sort_keys=True,indent=4,mimetype='application/json')
+  File "/usr/lib/python2.7/json/__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+TypeError: __init__() got an unexpected keyword argument 'mimetype'
+2018-04-20 12:15:49,890 INFO    : 211.103.220.74 - - [20/Apr/2018 12:15:49] "POST /function/test HTTP/1.1" 500 -
+2018-04-20 12:15:56,846 INFO    : new_project request
+2018-04-20 12:15:56,846 INFO    : get id and name
+2018-04-20 12:15:56,846 INFO    : success
+2018-04-20 12:15:56,846 INFO    : check id
+2018-04-20 12:15:56,862 INFO    : check_id.sh done
+2018-04-20 12:15:56,862 INFO    : id not exsit
+2018-04-20 12:15:56,862 WARNING : new_project ok
+2018-04-20 12:15:56,863 INFO    : 211.103.220.74 - - [20/Apr/2018 12:15:56] "POST /ctl/new_project HTTP/1.1" 200 -
+2018-04-20 12:15:58,368 INFO    : new_project request
+2018-04-20 12:15:58,368 INFO    : get id and name
+2018-04-20 12:15:58,368 INFO    : success
+2018-04-20 12:15:58,368 INFO    : check id
+2018-04-20 12:15:58,383 INFO    : check_id.sh done
+2018-04-20 12:15:58,383 INFO    : id not exsit
+2018-04-20 12:15:58,383 WARNING : new_project ok
+2018-04-20 12:15:58,383 INFO    : 211.103.220.74 - - [20/Apr/2018 12:15:58] "POST /ctl/new_project HTTP/1.1" 200 -
+2018-04-20 12:15:59,128 INFO    : new_project request
+2018-04-20 12:15:59,129 INFO    : get id and name
+2018-04-20 12:15:59,129 INFO    : success
+2018-04-20 12:15:59,129 INFO    : check id
+2018-04-20 12:15:59,144 INFO    : check_id.sh done
+2018-04-20 12:15:59,144 INFO    : id not exsit
+2018-04-20 12:15:59,144 WARNING : new_project ok
+2018-04-20 12:15:59,145 INFO    : 211.103.220.74 - - [20/Apr/2018 12:15:59] "POST /ctl/new_project HTTP/1.1" 200 -
+2018-04-20 12:15:59,487 INFO    : new_project request
+2018-04-20 12:15:59,487 INFO    : get id and name
+2018-04-20 12:15:59,487 INFO    : success
+2018-04-20 12:15:59,487 INFO    : check id
+2018-04-20 12:15:59,502 INFO    : check_id.sh done
+2018-04-20 12:15:59,502 INFO    : id not exsit
+2018-04-20 12:15:59,502 WARNING : new_project ok
+2018-04-20 12:15:59,503 INFO    : 211.103.220.74 - - [20/Apr/2018 12:15:59] "POST /ctl/new_project HTTP/1.1" 200 -
+2018-04-20 12:15:59,826 INFO    : new_project request
+2018-04-20 12:15:59,827 INFO    : get id and name
+2018-04-20 12:15:59,827 INFO    : success
+2018-04-20 12:15:59,827 INFO    : check id
+2018-04-20 12:15:59,842 INFO    : check_id.sh done
+2018-04-20 12:15:59,842 INFO    : id not exsit
+2018-04-20 12:15:59,842 WARNING : new_project ok
+2018-04-20 12:15:59,842 INFO    : 211.103.220.74 - - [20/Apr/2018 12:15:59] "POST /ctl/new_project HTTP/1.1" 200 -
+2018-04-20 12:16:00,242 INFO    : new_project request
+2018-04-20 12:16:00,242 INFO    : get id and name
+2018-04-20 12:16:00,242 INFO    : success
+2018-04-20 12:16:00,242 INFO    : check id
+2018-04-20 12:16:00,256 INFO    : check_id.sh done
+2018-04-20 12:16:00,257 INFO    : id not exsit
+2018-04-20 12:16:00,257 WARNING : new_project ok
+2018-04-20 12:16:00,257 INFO    : 211.103.220.74 - - [20/Apr/2018 12:16:00] "POST /ctl/new_project HTTP/1.1" 200 -
+2018-04-20 12:16:00,614 INFO    : new_project request
+2018-04-20 12:16:00,614 INFO    : get id and name
+2018-04-20 12:16:00,614 INFO    : success
+2018-04-20 12:16:00,614 INFO    : check id
+2018-04-20 12:16:00,629 INFO    : check_id.sh done
+2018-04-20 12:16:00,630 INFO    : id not exsit
+2018-04-20 12:16:00,630 WARNING : new_project ok
+2018-04-20 12:16:00,630 INFO    : 211.103.220.74 - - [20/Apr/2018 12:16:00] "POST /ctl/new_project HTTP/1.1" 200 -
+2018-04-20 12:16:01,058 INFO    : new_project request
+2018-04-20 12:16:01,058 INFO    : get id and name
+2018-04-20 12:16:01,058 INFO    : success
+2018-04-20 12:16:01,058 INFO    : check id
+2018-04-20 12:16:01,073 INFO    : check_id.sh done
+2018-04-20 12:16:01,073 INFO    : id not exsit
+2018-04-20 12:16:01,073 WARNING : new_project ok
+2018-04-20 12:16:01,074 INFO    : 211.103.220.74 - - [20/Apr/2018 12:16:01] "POST /ctl/new_project HTTP/1.1" 200 -
+2018-04-20 18:35:48,692 INFO    :  * Running on http://0.0.0.0:6000/ (Press CTRL+C to quit)
+2018-04-20 18:36:04,346 INFO    : <<=============== new_project request
+2018-04-20 18:36:04,347 INFO    : get id and name
+2018-04-20 18:36:04,347 INFO    : get id ok
+2018-04-20 18:36:04,347 INFO    : get name ok
+2018-04-20 18:36:04,347 INFO    : check id
+2018-04-20 18:36:04,368 INFO    : check_id.sh done
+2018-04-20 18:36:04,368 WARNING : id already exsit
+2018-04-20 18:36:04,368 WARNING : new_project failed
+2018-04-20 18:36:04,369 INFO    : 211.103.220.74 - - [20/Apr/2018 18:36:04] "POST /ctl/new_project HTTP/1.1" 200 -
+2018-04-20 18:36:13,265 INFO    : <<=============== new_project request
+2018-04-20 18:36:13,266 INFO    : get id and name
+2018-04-20 18:36:13,266 INFO    : get id ok
+2018-04-20 18:36:13,266 INFO    : get name ok
+2018-04-20 18:36:13,266 INFO    : check id
+2018-04-20 18:36:13,287 INFO    : check_id.sh done
+2018-04-20 18:36:13,287 WARNING : id already exsit
+2018-04-20 18:36:13,287 WARNING : new_project failed
+2018-04-20 18:36:13,288 INFO    : 211.103.220.74 - - [20/Apr/2018 18:36:13] "POST /ctl/new_project HTTP/1.1" 200 -
+2018-04-20 18:36:57,453 INFO    :  * Running on http://0.0.0.0:6000/ (Press CTRL+C to quit)
+2018-04-20 18:37:01,577 INFO    : <<=============== new_project request
+2018-04-20 18:37:01,577 INFO    : get id and name
+2018-04-20 18:37:01,577 INFO    : get id ok
+2018-04-20 18:37:01,578 INFO    : get name ok
+2018-04-20 18:37:01,578 INFO    : check id
+2018-04-20 18:37:01,598 INFO    : check_id.sh done
+2018-04-20 18:37:01,599 INFO    : id not exsit
+2018-04-20 18:37:01,599 INFO    : new_project ok
+2018-04-20 18:37:01,768 ERROR   : Exception on /ctl/new_project [POST]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "main.py", line 52, in new_project
+    (c_status, c_result) = commands.getstatusoutput('./shell/new_project.sh %s %s'%(id,name))
+NameError: global name 'name' is not defined
+2018-04-20 18:37:02,062 INFO    : 211.103.220.74 - - [20/Apr/2018 18:37:02] "POST /ctl/new_project HTTP/1.1" 500 -
+2018-04-20 18:37:45,481 INFO    :  * Running on http://0.0.0.0:6000/ (Press CTRL+C to quit)
+2018-04-20 18:37:50,840 INFO    : <<=============== new_project request
+2018-04-20 18:37:50,841 INFO    : get id and name
+2018-04-20 18:37:50,841 INFO    : get id ok
+2018-04-20 18:37:50,841 INFO    : get name ok
+2018-04-20 18:37:50,841 INFO    : check id
+2018-04-20 18:37:50,861 INFO    : check_id.sh done
+2018-04-20 18:37:50,861 INFO    : id not exsit
+2018-04-20 18:37:50,861 INFO    : new_project ok
+2018-04-20 18:37:50,862 INFO    : 211.103.220.74 - - [20/Apr/2018 18:37:50] "POST /ctl/new_project HTTP/1.1" 200 -
+2018-04-20 18:37:55,713 INFO    : <<=============== new_project request
+2018-04-20 18:37:55,713 INFO    : get id and name
+2018-04-20 18:37:55,713 INFO    : get id ok
+2018-04-20 18:37:55,713 INFO    : get name ok
+2018-04-20 18:37:55,713 INFO    : check id
+2018-04-20 18:37:55,735 INFO    : check_id.sh done
+2018-04-20 18:37:55,735 INFO    : id not exsit
+2018-04-20 18:37:55,735 INFO    : new_project ok
+2018-04-20 18:37:55,735 INFO    : 211.103.220.74 - - [20/Apr/2018 18:37:55] "POST /ctl/new_project HTTP/1.1" 200 -
+2018-04-20 18:38:00,767 INFO    : <<=============== new_project request
+2018-04-20 18:38:00,768 INFO    : get id and name
+2018-04-20 18:38:00,768 INFO    : get id ok
+2018-04-20 18:38:00,768 INFO    : get name ok
+2018-04-20 18:38:00,768 INFO    : check id
+2018-04-20 18:38:00,788 INFO    : check_id.sh done
+2018-04-20 18:38:00,788 WARNING : id already exsit
+2018-04-20 18:38:00,788 WARNING : new_project failed
+2018-04-20 18:38:00,789 INFO    : 211.103.220.74 - - [20/Apr/2018 18:38:00] "POST /ctl/new_project HTTP/1.1" 200 -
+2018-04-20 18:38:07,352 INFO    : <<=============== new_project request
+2018-04-20 18:38:07,352 INFO    : get id and name
+2018-04-20 18:38:07,353 INFO    : get id ok
+2018-04-20 18:38:07,353 INFO    : get name ok
+2018-04-20 18:38:07,353 INFO    : check id
+2018-04-20 18:38:07,371 INFO    : check_id.sh done
+2018-04-20 18:38:07,371 WARNING : id already exsit
+2018-04-20 18:38:07,371 WARNING : new_project failed
+2018-04-20 18:38:07,372 INFO    : 211.103.220.74 - - [20/Apr/2018 18:38:07] "POST /ctl/new_project HTTP/1.1" 200 -
+2018-04-20 18:38:16,711 INFO    : <<=============== new_project request
+2018-04-20 18:38:16,711 INFO    : get id and name
+2018-04-20 18:38:16,711 INFO    : get id ok
+2018-04-20 18:38:16,711 INFO    : get name ok
+2018-04-20 18:38:16,711 INFO    : check id
+2018-04-20 18:38:16,733 INFO    : check_id.sh done
+2018-04-20 18:38:16,734 INFO    : id not exsit
+2018-04-20 18:38:16,734 INFO    : new_project ok
+2018-04-20 18:38:16,734 INFO    : 211.103.220.74 - - [20/Apr/2018 18:38:16] "POST /ctl/new_project HTTP/1.1" 200 -
+2018-04-20 18:41:07,260 INFO    :  * Running on http://0.0.0.0:6000/ (Press CTRL+C to quit)
+2018-04-20 18:41:14,479 INFO    : <<=============== new_project request
+2018-04-20 18:41:14,480 INFO    : get id and name
+2018-04-20 18:41:14,480 INFO    : get id ok
+2018-04-20 18:41:14,480 INFO    : get name ok
+2018-04-20 18:41:14,480 INFO    : check id
+2018-04-20 18:41:15,421 INFO    : check_id.sh done
+2018-04-20 18:41:15,422 WARNING : id already exsit
+2018-04-20 18:41:15,422 WARNING : new_project failed
+2018-04-20 18:41:15,422 INFO    : 211.103.220.74 - - [20/Apr/2018 18:41:15] "POST /ctl/new_project HTTP/1.1" 200 -
+2018-04-20 18:41:21,623 INFO    : <<=============== new_project request
+2018-04-20 18:41:21,624 INFO    : get id and name
+2018-04-20 18:41:21,624 INFO    : get id ok
+2018-04-20 18:41:21,624 INFO    : get name ok
+2018-04-20 18:41:21,624 INFO    : check id
+2018-04-20 18:41:21,645 INFO    : check_id.sh done
+2018-04-20 18:41:21,645 INFO    : id not exsit
+2018-04-20 18:41:21,645 INFO    : new_project ok
+2018-04-20 18:41:31,855 INFO    : 211.103.220.74 - - [20/Apr/2018 18:41:31] "POST /ctl/new_project HTTP/1.1" 200 -
