@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo $(docker ps | grep ise-face | awk '{print $NF}')
+echo $(docker ps | grep Sup- | awk '{print $NF}')

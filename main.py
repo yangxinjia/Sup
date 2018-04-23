@@ -51,29 +51,39 @@ def new_project():
     	logger.info('new_project ok')
 	(c_status, c_result) = commands.getstatusoutput('./shell/new_project.sh %s %s'%(id,project))
     resp_dict = {'status': status,'id': id, 'message': message, 'project': project}
-    return jsonify(resp_dict)
     logger.info('=================>> return ok')
+    return jsonify(resp_dict)
 @app.route('/function/view_project', methods = ['POST','GET'])
 def view_project():
     try:
 	if request.method == "GET": 
+	    logger.info('<<=============== view_project request')
+	    logger.info('get projects status from server')
 	    (r_status, r_pr) = commands.getstatusoutput('./shell/r_pr.sh')
 	    (s_status, s_pr) = commands.getstatusoutput('./shell/s_pr.sh')
+	    logger.info('get projects status ok')
+	    projects = r_pr.split()
+	    logger.info('split string ok')
+	    pro_num = len(projects)
+	    for i in range(0,pro_num):
+	        p = projects[i]
+		p_id = 
+	    logger.info('write resp_dict')
 	    resp_dict = {
                 "status": "200",
                 "message": "ok",
-                "running": {
-		    "id": "123",
-		    "project": ""
-	            },
+                "running": p1,
                 "stopped": s_pr
             }
+	    logger.info('=================>> return ok')
         return jsonify(resp_dict)
     except :
+	logger.error('what f*ck an internal err!')
 	resp_dict = {
 	    "status": "400",
 	    "message": "internal err"
 	}
+	logger.error('=================>> return err')
 	return jsonify(resp_dict)
     #return json.dumps(resp_dict,sort_keys=True,indent=4)
 @app.route('/function/view_case', methods = ['POST','GET'])
