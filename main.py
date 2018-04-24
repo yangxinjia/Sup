@@ -34,8 +34,8 @@ def new_project():
     except:
 	logger.warn('failed')
         resp_dict = {'status': '400', 'message': 'I think you should tell me your project\'s id and name,shouldn\'t you? '}
-        return jsonify(resp_dict)
-	logger.warn('return fail info')
+        logger.warn('return fail info')
+	return jsonify(resp_dict)
     logger.info('check id')
     (c_status, c_result) = commands.getstatusoutput('./shell/check_id.sh %s'%id)    
     logger.info('check_id.sh done')
@@ -62,18 +62,50 @@ def view_project():
 	    (r_status, r_pr) = commands.getstatusoutput('./shell/r_pr.sh')
 	    (s_status, s_pr) = commands.getstatusoutput('./shell/s_pr.sh')
 	    logger.info('get projects status ok')
-	    projects = r_pr.split()
-	    logger.info('split string ok')
-	    pro_num = len(projects)
-	    for i in range(0,pro_num):
-	        p = projects[i]
-		p_id = 
+	    run_projects = r_pr.split()
+	    stop_projects = s_pr.split()
+	    logger.info('parse running projects info')
+	    run_project_id = ""
+	    run_return_arr = []
+	    for i in range(0,len(run_projects)):
+	        project_name = ""
+	        project = run_projects[i]
+		project_info = project.split('-')
+		for j in range(0,len(project_info)):
+		    if project_info[j] == "Sup":
+			for m in range(0,j):
+			    if project_name == "":
+				project_name = project_info[m]
+			    else:  
+				project_name = str(project_name)+"-"+str(project_info[m])
+		        project_id = project_info[j+1]
+			run_return_project = {"id":project_id, "name":project_name}
+			run_return_arr.append(run_return_project)
+	    logger.info('parse run_projects ok')
+	    stop_project_id = ""
+            stop_return_arr = []
+	    logger.info('parse stopped projects info')
+            for i in range(0,len(stop_projects)):
+                project_name = ""
+                stop_project = stop_projects[i]
+                project_info = stop_project.split('-')
+                for j in range(0,len(project_info)):
+                    if project_info[j] == "Sup":
+                        for m in range(0,j):
+                            if project_name == "":
+                                project_name = project_info[m]
+                            else:  
+                                project_name = str(project_name)+"-"+str(project_info[m])
+                        project_id = project_info[j+1]
+                        stop_return_project = {"id":project_id, "name":project_name}
+                        stop_return_arr.append(stop_return_project)
+	    logger.info('parse stopped projects ok')
 	    logger.info('write resp_dict')
 	    resp_dict = {
                 "status": "200",
                 "message": "ok",
-                "running": p1,
-                "stopped": s_pr
+                "running": run_return_arr,
+                "stopped": stop_return_arr
             }
 	    logger.info('=================>> return ok')
         return jsonify(resp_dict)
