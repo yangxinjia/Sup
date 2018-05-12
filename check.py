@@ -9,7 +9,7 @@ from sys import argv
 
 def check():
 	try:## 待优化
-		url = 'http://39.104.109.10:8501'
+		url = 'http://39.104.109.10:6601'
 		url = url + '/rec/image'
 		e_face_num = 9
 		e_img_cutboard = []
