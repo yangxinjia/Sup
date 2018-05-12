@@ -17,10 +17,10 @@ RESPONSE:
 			}
 	]
 }
-POST /new_project
+POST /ctl/new_project
 REQUEST:
 {
-	"id": "1"
+	"id": "1",
 	"project": "ise-face"
 }
 RESPONSE:

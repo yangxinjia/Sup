@@ -46,10 +46,14 @@ def new_project():
         message = "id(%s) alreay exist"%id
     else: ##
 	logger.info('id not exsit')
-        status = "200"
-        message ="ok"
     	logger.info('new_project ok')
 	(c_status, c_result) = commands.getstatusoutput('./shell/new_project.sh %s %s'%(id,project))
+	if c_result == "ok":
+	    status = "200"
+	    message = "ok"
+	else :
+	    status = "400"
+	    message = c_result
     resp_dict = {'status': status,'id': id, 'message': message, 'project': project}
     logger.info('=================>> return ok')
     return jsonify(resp_dict)
